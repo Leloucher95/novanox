@@ -30,8 +30,15 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (commit the documented empty template only)
 .env*
+!.env.example
+
+# Firebase local state
+.firebase/
+firestore-debug.log
+firebase-debug.log
+ui-debug.log
 
 # vercel
 .vercel
