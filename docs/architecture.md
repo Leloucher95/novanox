@@ -145,8 +145,8 @@ Masquer un bouton ou une route dans l'interface ne constitue jamais une autorisa
 - accessibilité ;
 - tests end-to-end.
 
-## 7. Décisions différées
+## 7. État du socle Firebase
 
-Les dépendances Firebase Web et Admin ne sont pas ajoutées tant que l'implémentation de l'authentification ne commence pas. Cette décision conserve un build stable et évite des paquets inutilisés dans le premier socle.
+Les SDK Firebase Web et Admin sont installés. Leurs initialisations sont séparées dans `lib/firebase/client.ts` et `lib/firebase/admin.ts`, idempotentes et protégées par les marqueurs `client-only` et `server-only`. La validation des variables d'environnement est centralisée dans `lib/env/` et ne révèle jamais leur valeur dans les messages d'erreur.
 
-Les règles actuellement versionnées refusent tout accès. Elles devront être remplacées uniquement avec des tests d'émulateur couvrant chaque rôle et chaque propriété de ressource.
+L'authentification, les sessions serveur et les règles d'autorisation métier restent différées à la phase Auth. Les règles actuellement versionnées refusent tout accès. Elles devront être remplacées uniquement avec des tests d'émulateur couvrant chaque rôle et chaque propriété de ressource.

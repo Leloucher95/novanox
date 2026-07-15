@@ -16,3 +16,18 @@ export const brand = {
     error: "#C62828",
   },
 } as const;
+
+export const brandCssVariables = {
+  "--color-background": brand.colors.background,
+  "--color-navy": brand.colors.navy,
+  "--color-primary": brand.colors.primary,
+  "--color-cyan": brand.colors.cyan,
+  "--color-secondary-blue": brand.colors.secondaryBlue,
+  "--color-light-background": brand.colors.lightBackground,
+  "--color-dark-text": brand.colors.darkText,
+  "--color-muted-text": brand.colors.mutedText,
+  "--color-white": brand.colors.white,
+  "--color-success": brand.colors.success,
+  "--color-warning": brand.colors.warning,
+  "--color-error": brand.colors.error,
+} as const;
