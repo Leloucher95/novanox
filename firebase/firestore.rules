@@ -1,0 +1,11 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Bootstrap posture: deny everything until role and ownership rules
+    // are implemented and covered by Firebase Emulator Suite tests.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
